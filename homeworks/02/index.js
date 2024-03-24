@@ -103,7 +103,6 @@ function convertNumber(input, originalNumberSystem, targetNumberSystem) {
 
 // Simple test cases to convert decimal to hexadecimal and back
 console.log(fromDecimal(215)); // converts decimal to hexadecimal
-console.log(fromDecimal(215)); // converts decimal to hexadecimal
 console.log(toDecimal('D7')); // converts hexadecimal to decimal
 
 // Test cases, when target number system is explicitly specified
@@ -114,7 +113,7 @@ console.log(convertNumber('A1F', NumberSystem.HEXADECIMAL, NumberSystem.OCTAL));
 console.log(convertNumber('11010111', NumberSystem.BINARY, NumberSystem.HEXADECIMAL)); // converts binary to hexadecimal
 console.log(convertNumber(11010111, NumberSystem.BINARY, NumberSystem.HEXADECIMAL)); // converts binary (integer) to hexadecimal
 
-// Test cases, when input is invalid
+// Test cases, when inputs are invalid
 try {
   convertNumber(12, NumberSystem.BINARY, NumberSystem.HEXADECIMAL); // invalid binary value throws error
 } catch (error) {
