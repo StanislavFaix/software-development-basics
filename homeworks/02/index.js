@@ -65,7 +65,7 @@ function toDecimal(number, originalNumberSystem = NumberSystem.HEXADECIMAL) {
   number = number.toString();  // Ensure input is a string
   let decimalNumber = 0;
   for (const element of number) {
-    let value = parseInt(element, originalNumberSystem.base);
+    const value = originalNumberSystem.validCharacters.indexOf(element.toUpperCase());
     decimalNumber = decimalNumber * originalNumberSystem.base + value;
   }
   return decimalNumber;
@@ -102,6 +102,7 @@ function convertNumber(input, originalNumberSystem, targetNumberSystem) {
 }
 
 // Simple test cases to convert decimal to hexadecimal and back
+console.log(fromDecimal(215)); // converts decimal to hexadecimal
 console.log(fromDecimal(215)); // converts decimal to hexadecimal
 console.log(toDecimal('D7')); // converts hexadecimal to decimal
 
